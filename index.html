@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zn-CH">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/head.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/head.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/head.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/head.png">
+  <meta name="author" content="Holger Koenemann">
+  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="HandheldFriendly" content="true">
+  <title>MakisLIFE!!!</title>
+  <link rel="stylesheet" href="css/min/theme.css">
+  <link rel="stylesheet" href="css/aos.css">
+
+  <style>
+    .bg-img {
+      background-image: url(./img/webp/bck8.webp);
+    }
+
+    @media only screen and (max-width: 576px) {
+      .bg-img {
+        background-image: url(./img/webp/bck8_xs.webp);
+      }
+    }
+
+    @media only screen and (max-width: 992px) {
+      .bg-img {
+        background-image: url(./img/webp/bck8_xs.webp);
+      }
+    }
+
+    @media only screen and (max-width: 1440px) {
+      .bg-img {
+        background-image: url(./img/webp/bck8_md.webp);
+      }
+    }
+
+    @media only screen and (min-width: 1441px) {
+      .bg-img {
+        background-image: url(./img/webp/bck8_xl.webp);
+      }
+    }
+  </style>
+
+  <style>
+    /* inter-300 - latin */
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-300.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-500.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-500.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local(''),
+        url('./fonts/inter-v12-latin-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('./fonts/inter-v12-latin-700.woff') format('woff');
+      /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    @font-face {
+      font-family: 'zhengwen';
+      src: url('./fonts/OPPOSans-B-2.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'youyaEng';
+      src: url(./fonts/GARABD.TTF) format('truetype');
+    }
+
+    @font-face {
+      font-family: 'zwtitle';
+      src: url(./fonts/SourceHanSansSC-Heavy-2.otf) format('opentype');
+    }
+  </style>
+
+  <style>
+.image-container {
+    margin-top: 4%;
+    margin-left: 50%;
+    position: fixed;
+    width: 800px;
+    height: auto;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 3s ease-in-out, transform 2s ease-in-out; /* 分别设置时间 */
+    transform: translateX(100%); /* 初始状态从右侧移出 */
+}
+
+.image-container.show {
+  opacity: 1;
+  transform: translateX(0); /* 移动到原始位置 */
+}
+
+.image-wrapper {
+  position: relative;
+  animation: float 8s ease-in-out infinite; /* 更缓慢的浮动效果 */
+  animation-delay: 2s; /* 确保浮动效果在移动效果结束后开始 */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(8px 8px 12px rgba(0, 0, 0, 0.2)); /* Windows 11 风格阴影 */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* 非矩形图像裁剪 */
+}
+
+/* 浮动动画定义 */
+@keyframes float {
+  0% {
+    transform: translate(-5px, 5px); /* 起始位置 */
+  }
+  25% {
+    transform: translate(5px, -5px); /* 右上角 */
+  }
+  50% {
+    transform: translate(5px, 5px); /* 右下角 */
+  }
+  75% {
+    transform: translate(-5px, -5px); /* 左上角 */
+  }
+  100% {
+    transform: translate(-5px, 5px); /* 回到左下角 */
+  }
+}
+
+@media (max-width: 1200px) {
+  .image-container {
+    display: none;
+  }
+}
+
+  </style>
+</head>
+
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="img/visual.png" alt="Non-rectangular image">
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelector('.image-container').classList.add('show');
+    }, 1000); // 1 秒后图片缓慢出现
+  });
+
+  window.addEventListener('scroll', function() {
+    const imageContainer = document.querySelector('.image-container');
+    const scrollY = window.scrollY || window.pageYOffset;
+    const viewportHeight = window.innerHeight;
+    const triggerPoint = viewportHeight * 0.2; // 20% 的视口高度
+
+    if (scrollY > triggerPoint) {
+      imageContainer.style.transform = 'translateX(100%)'; // 垂直滚动超过20%后图片向右移出屏幕
+    } else {
+      imageContainer.style.transform = 'translateX(0)'; // 否则保持原位置
+    }
+  });
+</script>
+
+
+
+<body class="position-relative d-flex h-100 w-100" data-bs-spy="scroll" data-bs-target="#navScroll">
+  <div class="h-100 container-fluid position-relative">
+    <div class="h-100 row d-flex align-items-stretch position-relative z-1">
+
+      <div class="p-0 d-flex align-items-start flex-column shadow position-relative">
+
+        <header class="mb-auto py-vh-2 col-12 px-vw-5">
+          <nav id="navScroll" class="navbar navbar-expand-lg navbar-dark d-flex px-3" tabindex="0">
+            <a class="navbar-brand d-flex align-items-center flex-grow-1 link-opacity-50-hover link-dark"
+              href="index.html">
+              <div class="fw-bold fs-4">Maki Winster</div>
+            </a>
+
+          </nav>
+
+        </header>
+
+        <main class="mb-auto col-12 px-vw-5">
+          <div class="bg-light rounded p-5 overflow-x-hidden" data-aos="fade-left">
+            <!-- <div class="on-hover d-inline"> -->
+            <img loading="lazy"
+              src="https://www.gstatic.com/android/keyboard/emojikitchen/20201001/u1f60a/u1f60a_u1f60e.png" width="80"
+              height="80" class="rounded-circle mb-4 mt-2 mt-xxl-4 hoh img-fluid" alt="A image of Maki"
+              style="filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));">
+
+
+            <!-- <img loading="lazy" src="img/webp/person_4_md.webp" width="80" height="80"
+                class="rounded-circle mb-4 shadow-sm mt-2 mt-xxl-4 soh" alt="Another image of Jane Doe">
+            </div> -->
+            <h1 class="text-black" style="font-family: 'zwtitle';">
+              <strong>哈喽呀，我是Maki！</strong><br />
+            </h1>
+            <h3 style="font-family: 'zhengwen';">一个正在不断追求技术，追求梦想，追求成为「万里挑一」的青年。</h3>
+
+            <p class="lead py-4">
+              抽空重构了下我的博客，嘿嘿
+            </p>
+            <div class="row d-flex align-items-center mb-2 mb-xxl-4 text-center text-sm-start mx-0">
+              <a class="btn btn-black btn-xl shadow col-12 col-sm-auto" href="contact.html" data-aos="fade-left"
+                data-aos-delay="200">开始
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-arrow-right ms-2" viewbox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+
+          <div class="py-vh-3 overflow-x-hidden">
+            <h2 class="h6 mb-4 px-4" data-aos="fade-left" data-aos-delay="200" style="font-family: zhengwen;">其他项目:</h2>
+            <div class="d-flex align-items-center p-4" data-aos="fade-left" data-aos-delay="200">
+              <div class="me-4">
+                <img loading="lazy" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-512.png"
+                  width="80" height="80" class="rounded-circle shadow-sm" alt="An image of my sitesproject website">
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5"><a href="https://github.com/MakiWinster"
+                    class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-underline-dark">GitHub
+                    - MakiWinster</a></h3>
+                <p style="font-family: zhengwen">收集、开发、学习、分享有用的东西！</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center my-2 p-4" data-aos="fade-left" data-aos-delay="200">
+              <div class="me-4">
+                <img loading="lazy"
+                  src="https://user-images.githubusercontent.com/63964149/152531278-5e01909d-0c2e-412a-8acc-4a06863c244d.png"
+                  width="80" height="80" class="rounded-circle shadow-sm"
+                  alt="Another image of another sitesproject website">
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5"><a href="https://leetcode.com/u/makiwinster/"
+                    class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-underline-dark">LeetCode</a>
+                </h3>
+                <p style="font-family: zhengwen;">啊啊啊啊啊啊啊刷题记录被美国区覆盖了</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center p-4" data-aos="fade-left" data-aos-delay="400">
+              <div class="me-4">
+                <img loading="lazy"
+                  src="https://cdn2.iconfinder.com/data/icons/gaming-platforms-squircle/250/discord_squircle-512.png"
+                  width="80" height="80" class="rounded-circle shadow-sm"
+                  alt="Another image of another sitesproject website">
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5"><a href="https://discord.gg/x3sWA7dDqk"
+                    class="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover link-underline-dark">Discord</a>
+                </h3>
+                <p style="font-family: zhengwen;">新频道！欢迎加入一起交流呀！</p>
+              </div>
+            </div>
+          </div>
+
+
+        </main>
+        <footer class="mb-auto col-12 py-vh-3 px-vw-5">
+
+          <div class="row d-flex justify-content-between small">
+            <div class="col-12 col-md-auto d-flex justify-content-center">
+              <ul class="nav bg-light rounded px-3">
+                <li class="nav-item">
+                  <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                      class="bi bi-house-fill" viewbox="0 0 16 16">
+                      <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
+                      <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="">© Maki 2024</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="https://beian.miit.gov.cn"> 粤ICP备2024180652号-1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="contact.html">联系我</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </footer>
+      </div>
+
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js" async></script>
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({});
+    </script>
+
+</body>
+
+</html>
