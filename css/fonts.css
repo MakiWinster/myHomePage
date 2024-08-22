@@ -1,0 +1,20 @@
+
+@font-face {
+    font-family: 'zhengwen';
+    src: url('../fonts/OPPOSans-B-2.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'youyaEng';
+    src: url(../fonts/GARABD.TTF) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'zwtitle';
+    src: url(../fonts/SourceHanSansSC-Heavy-2.otf) format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'zhuai';
+    src: url(../fonts/AaJiuZhongXiao-2.ttf) format('truetype');
+  }

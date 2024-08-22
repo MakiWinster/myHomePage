@@ -15,6 +15,7 @@
   <title>MakisLIFE!!!</title>
   <link rel="stylesheet" href="css/min/theme.css">
   <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/fonts.css">
 
   <style>
     .bg-img {
@@ -84,20 +85,6 @@
       /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
 
-    @font-face {
-      font-family: 'zhengwen';
-      src: url('./fonts/OPPOSans-B-2.ttf') format('truetype');
-    }
-
-    @font-face {
-      font-family: 'youyaEng';
-      src: url(./fonts/GARABD.TTF) format('truetype');
-    }
-
-    @font-face {
-      font-family: 'zwtitle';
-      src: url(./fonts/SourceHanSansSC-Heavy-2.otf) format('opentype');
-    }
   </style>
 
   <style>
@@ -109,13 +96,13 @@
     height: auto;
     z-index: 3;
     opacity: 0;
-    transition: opacity 3s ease-in-out, transform 2s ease-in-out; /* 分别设置时间 */
-    transform: translateX(100%); /* 初始状态从右侧移出 */
+    transition: opacity 2.5s ease-in-out, transform 2s ease-in-out; /* 分别设置时间 */
+    transform: translateX(60%); /* 初始状态从右侧移出 */
 }
 
 .image-container.show {
   opacity: 1;
-  transform: translateX(0); /* 移动到原始位置 */
+  transform: translateX(22px); /* 移动到原始位置 */
 }
 
 .image-wrapper {
@@ -140,7 +127,7 @@
     transform: translate(5px, -5px); /* 右上角 */
   }
   50% {
-    transform: translate(5px, 5px); /* 右下角 */
+    transform: translate(10px, 10px); /* 右下角 */
   }
   75% {
     transform: translate(-5px, -5px); /* 左上角 */
@@ -150,7 +137,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
   .image-container {
     display: none;
   }
@@ -158,6 +145,8 @@
 
   </style>
 </head>
+
+<!-- #region 虚拟形象 -->
 
 <div class="image-container">
   <div class="image-wrapper">
@@ -186,7 +175,7 @@
   });
 </script>
 
-
+<!-- #endregion -->
 
 <body class="position-relative d-flex h-100 w-100" data-bs-spy="scroll" data-bs-target="#navScroll">
   <div class="h-100 container-fluid position-relative">
@@ -220,7 +209,13 @@
             <h1 class="text-black" style="font-family: 'zwtitle';">
               <strong>哈喽呀，我是Maki！</strong><br />
             </h1>
-            <h3 style="font-family: 'zhengwen';">一个正在不断追求技术，追求梦想，追求成为「万里挑一」的青年。</h3>
+            <h3 style="font-family: 'zhengwen'; line-height: 2;">
+              一个正在不断追求技术，追求梦想，追求成为「万里挑一」的
+              <div style="font-family: zhuai; display: inline; position: relative; top: 2px; font-size: xxx-large;">青年</div>。
+          </h3>
+          
+          
+          
 
             <p class="lead py-4">
               抽空重构了下我的博客，嘿嘿
