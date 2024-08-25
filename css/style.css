@@ -1,0 +1,5 @@
+@media (max-width: 1023px) {
+    .lead.mt-4 {
+        margin-right: 0 !important;
+    }
+}

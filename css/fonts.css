@@ -18,3 +18,8 @@
     font-family: 'zhuai';
     src: url(../fonts/AaJiuZhongXiao-2.ttf) format('truetype');
   }
+
+  @font-face {
+    font-family: 'zhengwenl';
+    src: url(../fonts/hpsimplifiedhans-light.ttf) format('truetype');
+  }
