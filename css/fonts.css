@@ -1,8 +1,4 @@
 
-@font-face {
-    font-family: 'zhengwen';
-    src: url('../fonts/OPPOSans-B-2.ttf') format('truetype');
-  }
   
   @font-face {
     font-family: 'youyaEng';
@@ -21,5 +17,15 @@
 
   @font-face {
     font-family: 'zhengwenl';
-    src: url(../fonts/hpsimplifiedhans-light.ttf) format('truetype');
+    src: url(../fonts/HarmonyOS_Sans_SC_Light.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'zhengwen';
+    src: url(../fonts/HarmonyOS_Sans_SC_Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'zhengwen';
+    src: url(../fonts/HarmonyOS_Sans_SC_Regular.ttf) format('truetype');
   }
