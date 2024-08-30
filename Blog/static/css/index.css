@@ -7,12 +7,13 @@
 /* #region Article-page */
 .card {
     display: flex;
+    flex-direction: row;
     border: 1px solid #ddd;
-    padding: 16px;
+    padding: 12px;
     max-width: 960px;
     margin: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    font-family: 'zhengwen';
     transition: box-shadow 0.3s ease;
     cursor: pointer; /* 显示鼠标变为手指形状 */
 }
@@ -22,7 +23,7 @@
 }
 
 .card img {
-    width: 120px;
+    width: auto;
     height: 120px;
     margin-right: 16px;
 }
@@ -46,9 +47,34 @@
     margin: 0 0 16px 0;
 }
 
+
 .card-meta {
     color: #999;
     font-size: 14px;
+    text-align: left; /* 默认左对齐 */
+}
+
+
+/* 当屏幕宽度小于600px时，调整布局和隐藏标题 */
+@media screen and (max-width: 600px) {
+    .card {
+        flex-direction: column; /* 垂直布局 */
+        align-items: center; /* 居中对齐 */
+    }
+    
+    .card img {
+        width: 100%; /* 宽度设置为全宽 */
+        height: auto; /* 高度自动调整 */
+        margin: 0 0 16px 0; /* 调整图片与文本间距 */
+    }
+
+    .card-title {
+        display: none; /* 隐藏标题 */
+    }
+
+    .card-description, .card-meta {
+        text-align: center; /* 小屏幕时居中对齐 */
+    }
 }
 
 /* #endregion Article-page */
@@ -146,8 +172,8 @@ strong{
     text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, .15);
     line-height: 1.5;
     font-weight: 700;
-    font-size: 1.3rem;
-    animation: titlescale 1s;
+    font-size: 2rem;
+    animation: titlescale 2s;
 }
 main {
     display: block;
