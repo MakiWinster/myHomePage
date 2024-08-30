@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/min/theme.css">
     <link rel="stylesheet" href="../css/aos.css">
     <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.fancybox@2.1.5/source/jquery.fancybox.css">
@@ -290,35 +291,67 @@
         </main>
         
         
-        <footer class="mb-auto col-12 py-vh-3 px-vw-5" style="font-family: 'zhengwen';">
 
-            <div class="row d-flex justify-content-between small">
-              <div class="col-12 col-md-auto d-flex justify-content-center">
-                <ul class="nav bg-light rounded px-3">
-                  <li class="nav-item">
-                    <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-house-fill" viewbox="0 0 16 16">
-                        <path
-                          d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-                        <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-dark" href="">© MakiWinster 2024 all rights reserved.</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link link-dark" href="https://beian.miit.gov.cn"> 粤ICP备2024180652号-1</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link link-dark" href="contact.html">联系我</a>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-  
-          </footer>
+<!-- 电脑和iPad端Footer -->
+<footer class="desktop-footer">
+    <ul class="nav bg-light rounded px-3">
+        <li class="nav-item">
+            <a class="nav-link link-dark px-0" href="index.html" aria-label="Go home!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewbox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="">© MakiWinster 2024 all rights reserved.</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="https://beian.miit.gov.cn">粤ICP备2024180652号-1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="../index.html">关于我</a>
+        </li>
+    </ul>
+</footer>
+
+<!-- 手机端Footer -->
+<footer class="mobile-footer">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="">© MakiWinster 2024</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="../index.html">关于我</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link link-dark" href="https://beian.miit.gov.cn">粤ICP备2024180652号-1</a>
+        </li>
+    </ul>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+function adjustFooter() {
+const footerDesktop = document.querySelector('.desktop-footer');
+const footerMobile = document.querySelector('.mobile-footer');
+
+if (window.innerWidth <= 900) { // 手机端
+footerDesktop.style.display = 'none';
+footerMobile.style.display = 'block';
+} else { // 电脑和iPad端
+footerDesktop.style.display = 'flex';
+footerMobile.style.display = 'none';
+}
+}
+
+adjustFooter(); // 初始化调用
+
+window.addEventListener('resize', adjustFooter); // 当窗口大小变化时调整
+});
+
+</script>
+
     </div>
 
 

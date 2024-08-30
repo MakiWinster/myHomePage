@@ -1,0 +1,59 @@
+/* 电脑和iPad端样式 */
+.desktop-footer {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 8px; /* 保持圆角 */
+}
+
+.desktop-footer .nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-footer .nav-item {
+    margin-right: 20px;
+}
+
+.desktop-footer .nav-item a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.desktop-footer .nav-item a:hover {
+    text-decoration: underline;
+}
+
+/* 手机端样式 */
+.mobile-footer {
+    display: none; /* 默认隐藏，使用JS控制显示 */
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.mobile-footer .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-footer .nav-item {
+    width: 100%; /* 每个li占满一行 */
+    text-align: center; /* 文本居中 */
+}
+
+.mobile-footer .nav-item a {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    display: block; /* 链接块级元素 */
+}
+
+.mobile-footer .nav-item a:hover {
+    text-decoration: underline;
+}
