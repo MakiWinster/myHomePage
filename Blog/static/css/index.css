@@ -8,6 +8,7 @@
 .card {
     display: flex;
     flex-direction: row;
+    align-items: center; /* 水平布局时使图片垂直居中 */
     border: 1px solid #ddd;
     padding: 12px;
     max-width: 960px;
@@ -26,6 +27,7 @@
     width: auto;
     height: 120px;
     margin-right: 16px;
+    object-fit: contain; /* 防止图片失真 */
 }
 
 .card-content {
@@ -61,7 +63,7 @@
         flex-direction: column; /* 垂直布局 */
         align-items: center; /* 居中对齐 */
     }
-    
+
     .card img {
         width: 100%; /* 宽度设置为全宽 */
         height: auto; /* 高度自动调整 */
