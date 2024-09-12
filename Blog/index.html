@@ -83,6 +83,26 @@
                             </div>
                         </div>
                     </div>
+                    <!-- 卡片跟随页面顶部动画 -->
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const card = document.querySelector('.card-widget');
+                            const offset = window.innerHeight * 0.1; // 距离页面顶部10%
+                        
+                            function handleScroll() {
+                                const cardRect = card.getBoundingClientRect();
+                                if (cardRect.top <= offset) {
+                                    card.classList.add('sticky-card');
+                                } else {
+                                    card.classList.remove('sticky-card');
+                                }
+                            }
+                        
+                            window.addEventListener('scroll', handleScroll);
+                            handleScroll(); // 初始检查
+                        });
+                    </script>
+                        
 
                     <!-- <div class="card-widget card-announcement">
                         <div class="card-content">
