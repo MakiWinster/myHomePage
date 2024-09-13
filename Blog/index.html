@@ -85,22 +85,25 @@
                     </div>
                     <!-- 卡片跟随页面顶部动画 -->
                     <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const card = document.querySelector('.card-widget');
-                            const offset = window.innerHeight * 0.1; // 距离页面顶部10%
-                        
-                            function handleScroll() {
-                                const cardRect = card.getBoundingClientRect();
-                                if (cardRect.top <= offset) {
-                                    card.classList.add('sticky-card');
-                                } else {
-                                    card.classList.remove('sticky-card');
-                                }
-                            }
-                        
-                            window.addEventListener('scroll', handleScroll);
-                            handleScroll(); // 初始检查
-                        });
+window.addEventListener('scroll', function () {
+    const asideContent = document.getElementById('aside_content');
+    const scrollPosition = window.scrollY || window.pageYOffset;
+    const viewportHeight = window.innerHeight;
+    const offsetThreshold = viewportHeight * 0.05; // 屏幕顶部10%的位置
+    const startMoveThreshold = asideContent.offsetTop - offsetThreshold; // 卡片开始平移的阈值
+
+    if (window.innerWidth > 900) {
+        if (scrollPosition > startMoveThreshold) {
+            // 当页面滚动超过卡片的起始位置时，开始平移卡片
+            asideContent.style.transform = `translateY(${scrollPosition - startMoveThreshold}px)`;
+        } else {
+            asideContent.style.transform = 'translateY(0)';
+        }
+    } else {
+        asideContent.style.transform = 'none'; // 屏幕宽度小于900px时取消效果
+    }
+});
+
                     </script>
                         
 
